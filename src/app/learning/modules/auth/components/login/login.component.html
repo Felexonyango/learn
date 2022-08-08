@@ -1,0 +1,30 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="Submit(form)">
+    
+        
+        <mat-form-field appearance="standard">
+            <mat-label>Email</mat-label>
+            <input matInput maxlength="25" inputmode="tel" placeholder="Type Email" formControlName="email" #nameInput>
+            <mat-hint>Mini character 7 {{ nameInput.value.length }}/7</mat-hint>
+            <mat-error>Email is required</mat-error>
+            <mat-error *ngIf="form.controls['email'].errors?.['minlength']">
+                Please enter more than 5 character
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="standard">
+            <mat-label>Password</mat-label>
+            <input matInput maxlength="7" inputmode="tel" placeholder="Type Password" formControlName="password" #nameInput>
+            <mat-hint>Mini character 7 {{ nameInput.value.length }}/7</mat-hint>
+            <mat-error>Passwordis required</mat-error>
+            <mat-error *ngIf="form.controls['password'].errors?.['minlength']">
+                Please enter more than 5 character
+            </mat-error>
+        </mat-form-field>
+
+        <div mat-dialog-actions align="end">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        </div>
+    </form>
+  
+</div>
