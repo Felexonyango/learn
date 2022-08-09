@@ -1,11 +1,12 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { AppStateInterface } from '../../model/auth.model';
-import { AuthStateInterface } from '../reducer/reducer';
+
+import { AuthState } from '../reducer/reducer';
+import { AppState} from '../state/appState';
 
  
 export const authFeatureSelector =createFeatureSelector
-<AppStateInterface, AuthStateInterface>('auth')
+<AppState, AuthState>('auth')
 
 export const isSubmittingSelector =createSelector(
     authFeatureSelector,
-    (authState:AuthStateInterface)=>authState.isSubmitting)
+    (authState:AuthState)=>authState.isSubmitting)

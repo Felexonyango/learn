@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { AppState } from 'src/app/learning/store/state/appState';
 import { registerAction } from '../../../../store/actions/action';
 import { isSubmittingSelector } from '../../../../store/selector/selector';
 
@@ -13,21 +14,21 @@ import { isSubmittingSelector } from '../../../../store/selector/selector';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
-  //isSubmitting$: Observable<boolean>; 
+     public isSubmitting$: Observable<boolean> | undefined;
   
   constructor(
     private fb: FormBuilder,
-    private store:Store
+    private store:Store<AppState>
     
     ) { }
 
   ngOnInit(): void {
     this.intializeForm();
-  //this.intializeValues()
+  this.intializeValues()
   }
-  // intializeValues():void{
-  //   this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))
-  // }
+  intializeValues():void{
+    this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))
+  }
 
   intializeForm(){
     this.form = this.fb.group({

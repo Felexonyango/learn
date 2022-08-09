@@ -2,22 +2,23 @@ import { Action, createReducer, on } from "@ngrx/store";
 import { registerAction } from "../actions/action";
 
 
-export interface AuthStateInterface {
+export interface AuthState{
     isSubmitting: boolean;
    
   }
   
- const initialState: AuthStateInterface = {
+ const initialState: AuthState = {
  isSubmitting: false
+ 
 }
 
 
 
 const authReducer = createReducer(initialState,on(
 
-    registerAction,(state):AuthStateInterface=>({...state,isSubmitting:true})
+    registerAction,(state):AuthState=>({...state,isSubmitting:true})
 ))
 
-export function reducer(state: AuthStateInterface, action: Action){
+export function reducer(state: AuthState, action: Action){
     return authReducer(state,action)
 }
