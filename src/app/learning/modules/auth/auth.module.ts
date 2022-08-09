@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from '../../store/reducer/reducer';
+import { AuthService } from '../../service/auth/auth.service';
 @NgModule({
   declarations: [
     RegisterComponent,
@@ -21,6 +22,7 @@ import { reducer } from '../../store/reducer/reducer';
     StoreModule.forFeature('auth',reducer)
    
   ],
+  providers:[AuthService]
  
 
 })
