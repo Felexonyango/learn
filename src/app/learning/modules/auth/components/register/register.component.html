@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="form" (ngSubmit)="Submit(form)">
+    <form [formGroup]="form" (ngSubmit)="Submit()">
         <mat-form-field appearance="standard">
             <mat-label>Name</mat-label>
             <input matInput maxlength="10" inputmode="tel" placeholder="Type name" formControlName="name" #nameInput>
@@ -30,8 +30,10 @@
             </mat-error>
         </mat-form-field>
 
-        <div mat-dialog-actions align="end">
+        <div mat-dialog-actions align="center">
             <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+            <br> <br>
+            <a [routerLink]="['/login']">Have an account ?</a>
         </div>
     </form>
  
