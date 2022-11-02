@@ -5,18 +5,20 @@ import { AuthModule } from './learning/modules/auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './learning/modules/Home/components/home.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './learning/modules/shared/shared.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+//import { GrandParentComponent } from './Detection/components/grand-parent/grand-parent.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    
+
+
+   
     
   ],
   imports: [
