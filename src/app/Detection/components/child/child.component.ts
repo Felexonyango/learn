@@ -1,22 +1,26 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChildComponent implements OnInit {
 
-  constructor() { }
-title=''
+  @Input() message!:string; 
 
-  ngOnInit(): void {
+  @Output() ParentHandler : EventEmitter<any> = new EventEmitter();
+  constructor() { }
+
+  ngOnInit() {
   }
 
-   child(){
-    console.log('child');
-    return 'child';
-   }
+childClick(){
+  this.ParentHandler.emit('button clicked');
+  console.log('child called')
+}
 
 }
+
+

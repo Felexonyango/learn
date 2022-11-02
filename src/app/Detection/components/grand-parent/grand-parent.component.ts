@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grand-parent.component.scss']
 })
 export class GrandParentComponent implements OnInit {
-title ='some'
-  constructor() { }
 
-  ngOnInit(): void {
+  status: boolean = false
+  public text! : string;
+
+  constructor() {}
+
+  ngOnInit(): void {}
+  
+  
+  buttonClick() {
+    
+    this.status = !this.status
   }
 
 }

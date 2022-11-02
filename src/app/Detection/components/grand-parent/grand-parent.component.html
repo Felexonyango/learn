@@ -1,2 +1,8 @@
-<app-parent></app-parent>
-<input [(ngModel)]="title">
+<!-- <button (click)="buttonClick()" [ngClass]="status ? 'test' : 'test2'">
+   grand Parent Button
+  </button> -->
+  <p>
+    {{ status }}
+  </p>
+  <app-parent (ParentHandler)="buttonClick()"></app-parent>
+  

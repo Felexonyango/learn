@@ -1,2 +1,8 @@
-<app-child></app-child>
-{{parent()}}
+
+<app-child (ParentHandler)="parentClick()"></app-child>
+
+
+
+
+<input type="text" [(ngModel)]='text'(ngModelChange)="onChange($event)" /> 
+<app-child [message]='text'></app-child> 
