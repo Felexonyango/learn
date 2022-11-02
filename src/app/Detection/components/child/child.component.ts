@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Teacher } from '../../model/dummyData';
 
 @Component({
   selector: 'app-child',
@@ -8,18 +9,16 @@ import { ChangeDetectionStrategy, Component, OnInit, Input, Output, EventEmitter
 })
 export class ChildComponent implements OnInit {
 
-  @Input() message!:string; 
 
-  @Output() ParentHandler : EventEmitter<any> = new EventEmitter();
+  @Input() teacher!: Teacher;
+  @Input('principle') principleName!: string;
+ 
   constructor() { }
 
   ngOnInit() {
   }
 
-childClick(){
-  this.ParentHandler.emit('button clicked');
-  console.log('child called')
-}
+
 
 }
 

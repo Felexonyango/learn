@@ -1,8 +1,6 @@
-
-<app-child (ParentHandler)="parentClick()"></app-child>
-
-
-
-
-<input type="text" [(ngModel)]='text'(ngModelChange)="onChange($event)" /> 
-<app-child [message]='text'></app-child> 
+    <app-child *ngFor="let teacher of teachers"
+    [teacher]="teacher"
+    [principle]="principle">
+     </app-child>
+    
+ 
